@@ -1,0 +1,15 @@
+Is Linked List Length Even
+
+class Solution {
+  public:
+    bool isLengthEven(struct Node **head) {
+        int ans = 0;
+        
+        while (*head) {  // Dereference head to access the actual Node
+            ans++;
+            *head = (*head)->next;  // Move to the next node
+        }
+        
+        return ans % 2 == 0;
+    }
+};
